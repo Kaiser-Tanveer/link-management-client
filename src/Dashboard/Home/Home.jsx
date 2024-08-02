@@ -1,6 +1,6 @@
 import React from 'react';
 import AddSocialLinks from '../AddLinks/Social/AddSocialLinks';
-import AddOwnLinks from '../AddLinks/AddOwnLinks';
+import AddOwnLinks from '../AddLinks/OwnLinks/AddOwnLinks';
 
 const Home = () => {
     return (

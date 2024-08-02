@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaLink } from 'react-icons/fa6';
+import { HiMenu } from 'react-icons/hi';
 import { MdDashboard } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
@@ -11,9 +13,11 @@ const Sidebar = () => {
                 <span>Dashboard</span>
                 </Link>
                 <Link className='text-left flex items-center h-10 hover:bg-orange-100 px-4 rounded-[7px] duration-500 text-orange-500'>
+                    <FaLink className='mr-2 text-md'/>
                     <span>Menu-1</span>
                 </Link>
                 <Link className='text-left flex items-center h-10 hover:bg-orange-100 px-4 rounded-[7px] duration-500 text-orange-500'>
+                    <HiMenu className='mr-2 text-md'/>
                     <span>Menu-2</span>
                 </Link>
             </aside>
