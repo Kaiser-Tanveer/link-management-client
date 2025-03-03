@@ -1,8 +1,9 @@
 import React from 'react';
 
-const AddedLinks = () => {
+const MySocialLinks = () => {
     return (
-        <div className='w-full p-6 bg-white border border-orange-200 shadow-md'>
+        <div>
+        <h2 className='text-xl font-semibold text-center'>My Social Links</h2>
             <ol>
                 <li>www.facebook.com/kt</li>
                 <li>www.facebook.com/kt</li>
@@ -13,4 +14,4 @@ const AddedLinks = () => {
     );
 };
 
-export default AddedLinks;
+export default MySocialLinks;

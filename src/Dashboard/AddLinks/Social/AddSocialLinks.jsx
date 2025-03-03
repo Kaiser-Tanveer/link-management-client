@@ -31,7 +31,7 @@ const AddSocialLinks = () => {
 
     return (
         <div className='w-full'>
-            <h2 className='text-xl font-semibold'>Add social links</h2>
+            <h2 className='text-xl font-semibold text-center'>Add social links</h2>
             <div className='bg-white mt-4 flex flex-wrap items-center justify-center gap-6'>
                 {socials.map(social => (
                     <Link
