@@ -2,6 +2,7 @@ import React from 'react';
 import AddSocialLinks from '../AddLinks/Social/AddSocialLinks';
 import AddOwnLinks from '../AddLinks/OwnLinks/AddOwnLinks';
 import MySocialLinks from '../AddedLinks/MySocialLinks';
+import MyOwnLinks from '../AddedLinks/MyOwnLinks';
 
 const Home = () => {
     return (
@@ -17,10 +18,9 @@ const Home = () => {
             <div className='w-full flex items-center justify-between my-6'>
             <div className='w-[49%] bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
                 <MySocialLinks/>
-                <div></div>
             </div>
             <div className='w-[49%] bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
-                <MySocialLinks/>
+                <MyOwnLinks/>
             </div>
             </div>
         </div>
