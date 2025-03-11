@@ -6,22 +6,22 @@ import MyOwnLinks from '../AddedLinks/MyOwnLinks';
 
 const Home = () => {
     return (
-        <div className=''>
-            <div className='flex items-start justify-between overflow-y-scroll'>
-            <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
-                <AddSocialLinks/>
-            </div>
-            <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
-                <AddOwnLinks/>
-            </div>
+        <div className='h-[85vh] overflow-y-auto'>
+            <div className='flex items-start justify-between'>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+                    <AddSocialLinks/>
+                </div>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+                    <AddOwnLinks/>
+                </div>
             </div>
             <div className='w-full flex items-center justify-between my-6'>
-            <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
-                <MySocialLinks/>
-            </div>
-            <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-sm border border-white hover:border-orange-200 duration-500 p-3'>
-                <MyOwnLinks/>
-            </div>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+                    <MySocialLinks/>
+                </div>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+                    <MyOwnLinks/>
+                </div>
             </div>
         </div>
     );
