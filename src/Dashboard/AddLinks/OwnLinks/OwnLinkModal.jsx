@@ -57,7 +57,7 @@ const OwnLinkModal = ({ setOpen }) => {
                         <input
                             {...register("linkName", { required: "Site Name is Required!" })}
                             type="text"
-                            className="h-10 border bg-gray-100 border-orange-500 rounded-md w-full pl-2 text-blue-400"
+                            className="h-10 border bg-gray-100 border-orange-500 rounded-md w-full pl-2 text-orange-500"
                         />
                         {errors.linkName && <p className='text-red-500 text-sm'>{errors.linkName.message}</p>}
                     </div>
