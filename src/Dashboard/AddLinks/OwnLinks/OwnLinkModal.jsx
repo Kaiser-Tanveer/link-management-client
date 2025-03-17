@@ -4,7 +4,7 @@ import { FaLink, FaPlusCircle } from 'react-icons/fa';
 import axios from 'axios';
 
 const OwnLinkModal = ({ setOpen }) => {
-    const [linkFields, setLinkFields] = useState(["link1"]); // Initially one input field
+    const [linkFields, setLinkFields] = useState(["link1"]);
     const {
         register,
         handleSubmit,
@@ -22,9 +22,9 @@ const OwnLinkModal = ({ setOpen }) => {
 
     const onSubmit = async (data) => {
         const linkData = {
-            user: null,  // Update with user ID if authentication is implemented
+            // user: null,
             name: data.linkName,
-            links: linkFields.map((field) => data[field]).filter(Boolean) // Store only non-empty links
+            links: linkFields.map((field) => data[field]).filter(Boolean)
         };
 
         try {
@@ -57,7 +57,7 @@ const OwnLinkModal = ({ setOpen }) => {
                         <input
                             {...register("linkName", { required: "Site Name is Required!" })}
                             type="text"
-                            className="h-10 border border-orange-500 rounded-md w-full pl-2 text-blue-400"
+                            className="h-10 border bg-gray-100 border-orange-500 rounded-md w-full pl-2 text-blue-400"
                         />
                         {errors.linkName && <p className='text-red-500 text-sm'>{errors.linkName.message}</p>}
                     </div>
@@ -69,7 +69,7 @@ const OwnLinkModal = ({ setOpen }) => {
                             <input
                                 {...register(link)}
                                 type="url"
-                                className="h-8 border border-orange-500 rounded-md w-full pl-2 text-blue-400"
+                                className="h-8 border border-orange-500 bg-gray-100 rounded-md w-full pl-2 text-blue-400"
                             />
                         </div>
                     ))}
