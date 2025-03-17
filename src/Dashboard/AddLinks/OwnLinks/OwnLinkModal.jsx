@@ -1,121 +1,104 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaLink } from 'react-icons/fa6';
+import { FaLink, FaPlusCircle } from 'react-icons/fa';
+import axios from 'axios';
 
-const OwnLinkModal = ({setOpen}) => {
-
+const OwnLinkModal = ({ setOpen }) => {
+    const [linkFields, setLinkFields] = useState(["link1"]); // Initially one input field
     const {
         register,
         handleSubmit,
-        setError,
+        setValue,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        // const socialLinkData = [
-            //     {
-                //         user: null,
-                //         name: modalName,
-                //         url: data?.socialURL,
-                //     }
-                // ]
-                // console.log(socialLinkData);
-                setOpen(false);
+
+    // Add a new link input (max 3)
+    const handleAddMore = () => {
+        if (linkFields.length < 3) {
+            setLinkFields([...linkFields, `link${linkFields.length + 1}`]);
+        }
     };
 
-    React.useEffect(() => {
-        setError("ownURL", {
-          type: "manual",
-          message: "",
-        })
-      }, [setError])
+    const onSubmit = async (data) => {
+        const linkData = {
+            user: null,  // Update with user ID if authentication is implemented
+            name: data.linkName,
+            links: linkFields.map((field) => data[field]).filter(Boolean) // Store only non-empty links
+        };
+
+        try {
+            const response = await axios.post("http://localhost:5000/api/links", linkData);
+            console.log(response.data);
+            setOpen(false);
+        } catch (error) {
+            console.error("Error adding link:", error);
+        }
+    };
 
     return (
-            <dialog id="own_link_modal" className="modal" open>
-                <div className="modal-box w-96 bg-white rounded-md border border-orange-200">
-                    <form onSubmit={handleSubmit(onSubmit)} className=''>
-                        <button
-                            type="button"
-                            className="btn btn-sm btn-ghost absolute right-2 top-2"
-                            onClick={() => setOpen(false)}
-                        >
-                            ✕
-                        </button>
-                        <div className='pb-2 flex justify-center text-2xl text-orange-500 font-bold gap-2'>Add Your Own Links <FaLink/> </div>
-                        <div className="w-full">
-                            <label className="text-sm font-semibold text-center text-gray-700">
-                                Site Name
-                            </label>
-                            <input
-                                {...register("name", { required: "Site Name is Required !!" })}
-                                type='url'
-                                className="h-10 border border-orange-500 rounded-[7px] bg-slate-100 w-full pl-2 text-blue-400"
-                                // placeholder={`https://www.${modalName && modalName.toLowerCase()}.com`}
-                            />
-                            {
-                                (errors && errors.name) && 
-                                <p className='text-[#FF3333] text-sm text-center'>{errors.name.message}</p>
-                            }
-                        </div>
+        <dialog id="own_link_modal" className="modal" open>
+            <div className="modal-box w-96 bg-white rounded-md border border-orange-200">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <button
+                        type="button"
+                        className="btn btn-sm btn-ghost absolute right-2 top-2"
+                        onClick={() => setOpen(false)}
+                    >
+                        ✕
+                    </button>
+                    <div className='pb-2 flex justify-center text-2xl text-orange-500 font-bold gap-2'>
+                        Add Your Own Links <FaLink />
+                    </div>
 
-                        <div className="w-full mt-4">
-                            <label className="text-sm font-semibold text-center text-gray-700">
-                                Link-1
-                            </label>
+                    {/* Site Name Field */}
+                    <div className="w-full">
+                        <label className="text-sm font-semibold text-gray-700">Site Name</label>
+                        <input
+                            {...register("linkName", { required: "Site Name is Required!" })}
+                            type="text"
+                            className="h-10 border border-orange-500 rounded-md w-full pl-2 text-blue-400"
+                        />
+                        {errors.linkName && <p className='text-red-500 text-sm'>{errors.linkName.message}</p>}
+                    </div>
+
+                    {/* Dynamic Link Fields */}
+                    {linkFields.map((link, index) => (
+                        <div key={index} className="w-full mt-2">
+                            <label className="text-sm font-semibold text-gray-700">Link {index + 1}</label>
                             <input
-                                {...register("link1", { required: "Link is Required !!" })}
-                                type='url'
-                                className="h-8 border border-orange-500 rounded-[7px] bg-slate-100 w-full pl-2 text-blue-400"
-                                // placeholder={`https://www.${modalName && modalName.toLowerCase()}.com`}
-                            />
-                            {
-                                (errors && errors.link1) && 
-                                <p className='text-[#FF3333] text-sm text-center'>{errors.link1.message}</p>
-                            }
-                        </div>
-                        <div className="w-full">
-                            <label className="text-sm font-semibold text-center text-gray-700">
-                                Link-2
-                            </label>
-                            <input
-                                {...register("link2", { required: "Link is Required !!" })}
-                                type='url'
-                                className="h-8 border border-orange-500 rounded-[7px] bg-slate-100 w-full pl-2 text-blue-400"
-                                // placeholder={`https://www.${modalName && modalName.toLowerCase()}.com`}
-                            />
-                            {
-                                (errors && errors.link2) && 
-                                <p className='text-[#FF3333] text-sm text-center'>{errors.link2.message}</p>
-                            }
-                        </div>
-                        <div className="w-full">
-                            <label className="text-sm font-semibold text-center text-gray-700">
-                                Link-3
-                            </label>
-                            <input
-                                {...register("link3", { required: "Link is Required !!" })}
-                                type='url'
-                                className="h-8 border border-orange-500 rounded-[7px] bg-slate-100 w-full pl-2 text-blue-400"
-                                // placeholder={`https://www.${modalName && modalName.toLowerCase()}.com`}
-                            />
-                            {
-                                (errors && errors.link3) && 
-                                <p className='text-[#FF3333] text-sm text-center'>{errors.link3.message}</p>
-                            }
-                        </div>
-                        
-                        <div>
-                            <input
-                                type="submit"
-                                value={"Add"}
-                                className='mt-6 bg-orange-500 w-full text-white font-semibold h-10 rounded-[7px]'
+                                {...register(link)}
+                                type="url"
+                                className="h-8 border border-orange-500 rounded-md w-full pl-2 text-blue-400"
                             />
                         </div>
-                    </form>
-                </div>
-            </dialog>
-        )
+                    ))}
+
+                    {/* Add More Button (Only shows if less than 3 links) */}
+                    {linkFields.length < 3 && (
+                        <div className="flex justify-center mt-2">
+                            <button
+                                type="button"
+                                className="text-orange-500 flex items-center gap-2 border border-orange-500 rounded-md px-3 py-1"
+                                onClick={handleAddMore}
+                            >
+                                <FaPlusCircle /> Add More
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Submit Button */}
+                    <div>
+                        <input
+                            type="submit"
+                            value="Add"
+                            className='mt-4 bg-orange-500 w-full text-white font-semibold h-10 rounded-md cursor-pointer'
+                        />
+                    </div>
+                </form>
+            </div>
+        </dialog>
+    );
 };
-
 
 export default OwnLinkModal;
