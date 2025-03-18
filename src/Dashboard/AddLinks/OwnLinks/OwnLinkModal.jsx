@@ -26,9 +26,9 @@ const OwnLinkModal = ({ setOpen }) => {
             name: data.linkName,
             links: linkFields.map((field) => data[field]).filter(Boolean)
         };
-
+        
         try {
-            const response = await axios.post("http://localhost:5000/api/links", linkData);
+            const response = await axios.post("http://localhost:5000/api/links/add", linkData);
             console.log(response.data);
             setOpen(false);
         } catch (error) {
