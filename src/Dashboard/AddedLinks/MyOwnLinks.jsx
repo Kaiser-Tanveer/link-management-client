@@ -8,7 +8,7 @@ const MyOwnLinks = () => {
     const [error, setError] = React.useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/links/get')
+        axios.get('http://localhost:5000/api/links/get-links')
             .then(response => {
                 setLinks(response.data);
                 setLoading(false);
@@ -18,16 +18,26 @@ const MyOwnLinks = () => {
                 setLoading(false);
             });
     }, []);
-    console.log(links);
+    console.log(links.data);
     return (
         <div>
-        <h2 className='text-xl font-semibold text-center'>My Own links</h2>
-            <ol className='list'>
-            {links.map((item, index) => (
-                <li className='flex items-center gap-2 link-hover cursor-pointer'><FaLink/> {links}</li>
-            ))}
-            </ol>
-        </div>
+    <h2 className="text-xl font-semibold text-center">My Own Links</h2>
+    {links?.data?.map((link, index) => (
+        <ol key={index} className="list">
+            <h4>{link?.name}</h4>
+            <ul>
+                {link?.links?.map((item, idx) => (
+                    <li key={idx}>
+                        <a href={item} target="_blank" rel="noopener noreferrer">
+                            {item}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </ol>
+    ))}
+</div>
+
     );
 };
 
