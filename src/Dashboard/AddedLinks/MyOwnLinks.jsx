@@ -18,23 +18,24 @@ const MyOwnLinks = () => {
                 setLoading(false);
             });
     }, []);
-    console.log(links.data);
     return (
         <div>
     <h2 className="text-xl font-semibold text-center">My Own Links</h2>
     {links?.data?.map((link, index) => (
-        <ol key={index} className="list">
-            <h4>{link?.name}</h4>
+        <article key={index} className="mb-4">
+            <h4 className='font-bold underline'>{link?.name}</h4>
             <ul>
                 {link?.links?.map((item, idx) => (
-                    <li key={idx}>
-                        <a href={item} target="_blank" rel="noopener noreferrer">
-                            {item}
+                    <li key={idx} className='flex items-center gap-2'>
+                        <p>{idx + 1}.</p>
+                        <a href={item} target="_blank" rel="noopener noreferrer" className="flex items-center link-hover link-primary">
+                            {item?.length > 30 ? `${item.slice(0, 30)}...` : item}
+                            <FaLink className="ml-2" />
                         </a>
                     </li>
                 ))}
             </ul>
-        </ol>
+        </article>
     ))}
 </div>
 
