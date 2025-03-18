@@ -8,7 +8,7 @@ const MyOwnLinks = () => {
     const [error, setError] = React.useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/links')
+        axios.get('http://localhost:5000/api/links/get')
             .then(response => {
                 setLinks(response.data);
                 setLoading(false);
