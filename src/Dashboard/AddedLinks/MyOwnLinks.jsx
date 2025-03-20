@@ -29,7 +29,7 @@ const MyOwnLinks = () => {
                     <li key={idx} className='flex items-center gap-2'>
                         <p>{idx + 1}.</p>
                         <a href={item} target="_blank" rel="noopener noreferrer" className="flex items-center link-hover link-primary">
-                            {item?.length > 30 ? `${item.slice(0, 30)}...` : item}
+                            {item?.length > 30 ? `${item?.slice(0, 30)}...` : item}
                             <FaLink className="ml-2" />
                         </a>
                     </li>
