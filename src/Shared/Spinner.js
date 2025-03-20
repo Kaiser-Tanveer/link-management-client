@@ -3,15 +3,14 @@ import { Blocks } from 'react-loader-spinner';
 
 const Spinner = () => {
     return (
-        <div>
+        <div className="flex justify-center items-center h-[85vh] bg-white">
             <Blocks
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            visible={true}
+                height="180"
+                width="180"
+                color={["#f97316"]}
+                ariaLabel="blocks-loading"
+                wrapperClass="blocks-wrapper"
+                visible={true}
             />
         </div>
     );

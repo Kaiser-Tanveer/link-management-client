@@ -6,11 +6,11 @@ import MyOwnLinks from '../AddedLinks/MyOwnLinks';
 import Spinner from '../../Shared/Spinner';
 
 const Home = () => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setLoading(false);
+            setLoading(true);
         }, 1000);
 
         return () => clearTimeout(timer);
