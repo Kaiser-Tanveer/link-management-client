@@ -1,18 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaDiscord,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaPinterest,
-  FaSnapchat,
-  FaTelegram,
-  FaTiktok,
-  FaTumblr,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSnapchat, FaTelegram, FaTiktok, FaTumblr, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SocialModal from "./SocialModal";
 
@@ -48,7 +35,7 @@ const AddSocialLinks = () => {
   const handleLinkSubmit = (name, url) => {
     setAddedLinks((prev) => ({
       ...prev,
-      [name]: url, // ✅ Store added link
+      [name]: url,
     }));
   };
 
