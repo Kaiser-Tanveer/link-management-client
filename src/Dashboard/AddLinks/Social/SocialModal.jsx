@@ -15,9 +15,9 @@ const SocialModal = ({ setOpen, modalName, modalIcon, handleLinkSubmit }) => {
       name: modalName,
       url: data?.socialURL,
     };
-
+    console.log(socialLinkData);
     try {
-      const response = await fetch("http://localhost:5000/api/links/add", {
+      const response = await fetch("http://localhost:5000/api/links/add-social", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
