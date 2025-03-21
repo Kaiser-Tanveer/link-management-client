@@ -1,5 +1,18 @@
-import React, { useState } from "react";
-import { FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSnapchat, FaTelegram, FaTiktok, FaTumblr, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import {
+  FaDiscord,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+  FaSnapchat,
+  FaTelegram,
+  FaTiktok,
+  FaTumblr,
+  FaTwitter,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SocialModal from "./SocialModal";
 
@@ -24,9 +37,21 @@ const AddSocialLinks = () => {
     { id: "12", icon: <FaTumblr className="text-4xl" />, name: "Tumblr" },
   ];
 
+  useEffect(() => {
+    fetch("http://localhost:5000/api/links/")
+      .then((res) => res.json())
+      .then((data) => {
+        const storedLinks = {};
+        data.forEach((link) => {
+          storedLinks[link.name] = link.url;
+        });
+        setAddedLinks(storedLinks);
+      })
+      .catch((error) => console.error("Error fetching social links:", error));
+  }, []);
+
   const handleLinkClick = (social) => {
     if (addedLinks[social.name]) return;
-
     setModalIcon(social.icon);
     setModalName(social.name);
     setOpen(true);
