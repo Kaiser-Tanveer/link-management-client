@@ -22,8 +22,9 @@ const MyOwnLinks = () => {
         <div>
     <h2 className="text-xl font-semibold text-center">My Own Links</h2>
     {links?.data?.map((link, index) => (
-        <article key={index} className="mb-4">
-            <h4 className='font-bold'>Site Name: <span className='underline'>{link?.name}</span></h4>
+        <article key={index} className="mb-4 flex items-center gap-6">
+            <h4 className='font-bold underline'>{link?.name}:</h4>
+            <hr className='border-2 h-full w-full' />
             <ul>
                 {link?.links?.map((item, idx) => (
                     <li key={idx} className='flex items-center gap-2'>
