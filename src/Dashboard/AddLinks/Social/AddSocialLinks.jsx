@@ -20,7 +20,7 @@ const AddSocialLinks = () => {
   const [open, setOpen] = useState(false);
   const [modalName, setModalName] = useState("");
   const [modalIcon, setModalIcon] = useState(<></>);
-  const [addedLinks, setAddedLinks] = useState({}); // ✅ Track added links
+  const [addedLinks, setAddedLinks] = useState({});
 
   const socials = [
     { id: "01", icon: <FaFacebook className="text-4xl" />, name: "Facebook" },
@@ -38,7 +38,7 @@ const AddSocialLinks = () => {
   ];
 
   const handleLinkClick = (social) => {
-    if (addedLinks[social.name]) return; // ✅ Prevent opening if link exists
+    if (addedLinks[social.name]) return;
 
     setModalIcon(social.icon);
     setModalName(social.name);
@@ -75,7 +75,7 @@ const AddSocialLinks = () => {
           setOpen={setOpen}
           modalName={modalName}
           modalIcon={modalIcon}
-          handleLinkSubmit={handleLinkSubmit} // ✅ Pass function to store data
+          handleLinkSubmit={handleLinkSubmit}
         />
       )}
     </div>
