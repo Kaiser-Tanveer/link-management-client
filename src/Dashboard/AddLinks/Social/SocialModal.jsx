@@ -11,7 +11,7 @@ const SocialModal = ({ setOpen, modalName, modalIcon, handleLinkSubmit }) => {
 
   const onSubmit = async (data) => {
     const socialLinkData = {
-      user: "your_user_id", // Replace this with actual user ID if applicable
+      user: "your_user_id",
       name: modalName,
       url: data?.socialURL,
     };

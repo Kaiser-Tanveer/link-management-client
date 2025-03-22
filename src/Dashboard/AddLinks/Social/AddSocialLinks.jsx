@@ -38,7 +38,7 @@ const AddSocialLinks = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/links/")
+    fetch("http://localhost:5000/api/links/get-social")
       .then((res) => res.json())
       .then((data) => {
         const storedLinks = {};
