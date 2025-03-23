@@ -22,18 +22,18 @@ const Home = () => {
     return (
         <div className='h-[85vh] overflow-y-auto'>
             <div className='w-full md:flex md:items-start md:justify-between'>
-                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3 overflow-auto'>
                     <AddSocialLinks/>
                 </div>
-                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto mt-6 md:mt-0'>
                     <MySocialLinks/>
                 </div>
             </div>
             <div className='w-full md:flex md:items-center md:justify-between my-6'>
-            <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6'>
+            <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <AddOwnLinks/>
                 </div>
-                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto mt-6 md:mt-0'>
                     <MyOwnLinks/>
                 </div>
             </div>
