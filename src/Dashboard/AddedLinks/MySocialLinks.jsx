@@ -47,7 +47,7 @@ const MySocialLinks = () => {
                     <article key={index} className="mb-4 flex items-center">
                         <Icon className="text-orange-500 text-xl mr-2" />
                         <hr className="border h-full w-[20%] border-orange-500" />
-                        <ul>
+                        <ul className=''>
                             <li className="flex items-center gap-2 border-l-2 pl-2 border-orange-500">
                                 <p>{index + 1}.</p>
                                 <a href={link?.url} target="_blank" rel="noopener noreferrer" className="flex items-center link-hover text-orange-500">

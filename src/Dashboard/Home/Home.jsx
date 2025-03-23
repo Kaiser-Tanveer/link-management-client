@@ -30,10 +30,10 @@ const Home = () => {
                 </div>
             </div>
             <div className='w-full flex items-center justify-between my-6'>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6'>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <MySocialLinks/>
                 </div>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6'>
+                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <MyOwnLinks/>
                 </div>
             </div>
