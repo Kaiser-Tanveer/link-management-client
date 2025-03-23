@@ -21,19 +21,19 @@ const Home = () => {
     }
     return (
         <div className='h-[85vh] overflow-y-auto'>
-            <div className='flex items-start justify-between'>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
+            <div className='w-full md:flex md:items-start md:justify-between'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3'>
                     <AddSocialLinks/>
                 </div>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6'>
-                    <AddOwnLinks/>
-                </div>
-            </div>
-            <div className='w-full flex items-center justify-between my-6'>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <MySocialLinks/>
                 </div>
-                <div className='w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
+            </div>
+            <div className='w-full md:flex md:items-center md:justify-between my-6'>
+            <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6'>
+                    <AddOwnLinks/>
+                </div>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <MyOwnLinks/>
                 </div>
             </div>
