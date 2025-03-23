@@ -45,11 +45,11 @@ const MySocialLinks = () => {
                 const Icon = socialIcons[link?.name] || FaLink;
                 return (
                     <article key={index} className="mb-4 flex items-center">
-                        <Icon className="text-orange-500 text-xl mr-2" />
-                        <hr className="border h-full w-[20%] border-orange-500" />
-                        <ul className=''>
-                            <li className="flex items-center gap-2 border-l-2 pl-2 border-orange-500">
-                                <p>{index + 1}.</p>
+                        <p>{index + 1}</p>
+                        <Icon className="text-orange-500 text-xl ml-2" />
+                        <hr className="hidden md:block border h-full w-[20%] border-orange-500 ml-2" />
+                        <ul className='w-[90%] md:w-full'>
+                            <li className="flex items-center gap-2 md:border-l-2 pl-2 border-orange-500">
                                 <a href={link?.url} target="_blank" rel="noopener noreferrer" className="flex items-center link-hover text-orange-500">
                                     {link?.url?.length > 30 ? `${link?.url.slice(0, 30)}...` : link?.url}
                                 </a>
