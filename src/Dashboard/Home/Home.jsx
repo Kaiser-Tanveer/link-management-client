@@ -25,7 +25,7 @@ const Home = () => {
                 <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 p-3 overflow-auto'>
                     <AddSocialLinks/>
                 </div>
-                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto mt-6 md:mt-0'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 overflow-auto mt-6 md:mt-0'>
                     <MySocialLinks/>
                 </div>
             </div>
@@ -33,7 +33,7 @@ const Home = () => {
             <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto'>
                     <AddOwnLinks/>
                 </div>
-                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 py-3 px-6 overflow-auto mt-6 md:mt-0'>
+                <div className='md:w-[49%] h-72 bg-white rounded-[7px] shadow-md border border-white hover:border-orange-200 duration-500 overflow-auto mt-6 md:mt-0'>
                     <MyOwnLinks/>
                 </div>
             </div>

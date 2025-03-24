@@ -38,13 +38,13 @@ const MySocialLinks = () => {
 
     return (
         <div>
-            <h2 className="text-xl font-semibold text-center">My Social Links</h2>
+            <h2 className="text-xl font-semibold text-center bg-orange-500 text-white py-3 sticky top-0 z-10 w-full">My Social Links</h2>
             {error && <p className="text-red-500 text-center">{error}</p>}
             {loading && <p className="text-center">Loading...</p>}
             {links?.map((link, index) => {
                 const Icon = socialIcons[link?.name] || FaLink;
                 return (
-                    <article key={index} className="mb-4 flex items-center">
+                    <article key={index} className="mb-4 flex items-center px-6 mt-2">
                         <p>{index + 1}</p>
                         <Icon className="text-orange-500 text-xl ml-2" />
                         <hr className="hidden md:block border h-full w-[20%] border-orange-500 ml-2" />
