@@ -9,7 +9,7 @@ const DashboardLayout = () => {
         <div className='mx-auto'>
             <Header/>
             <main className='flex items-center md:h-[90vh]'>
-            <div className='w-[15%] bg-white h-full border-r border-orange-200'>
+            <div className='hidden md:block w-[15%] bg-white h-full border-r border-orange-200'>
                 <Sidebar/>
             </div>
             <div className='w-full md:w-[85%] h-full p-4'>
