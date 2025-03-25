@@ -8,8 +8,8 @@ const Header = () => {
     const [profile, setProfile] = useState(false);
     return (
         <>
-        <div onClick={() => profile && setProfile(false)} className='bg-orange-500 py-1 text-white px-2'>
-            <Link className='hidden md:flex items-center justify-end'><HiUserCircle onClick={() => setProfile(!profile)} className='text-4xl mr-2'/></Link>
+        <div onClick={() => profile && setProfile(false)} className='hidden md:block bg-orange-500 py-1 text-white px-2'>
+            <Link className='items-center justify-end'><HiUserCircle onClick={() => setProfile(!profile)} className='text-4xl mr-2'/></Link>
         </div>
         {
             profile &&

@@ -6,13 +6,13 @@ import Footer from '../Shared/Footer';
 
 const DashboardLayout = () => {
     return (
-        <div className=''>
+        <div className='mx-auto'>
             <Header/>
-            <main className='flex items-center h-[90vh]'>
-            <div className='hidden md:block w-[15%] bg-white h-full border-r border-orange-200'>
+            <main className='flex items-center md:h-[90vh]'>
+            <div className='w-[15%] bg-white h-full border-r border-orange-200'>
                 <Sidebar/>
             </div>
-            <div className='w-[85%] bg-slate-100 h-full p-4'>
+            <div className='w-full md:w-[85%] h-full p-4'>
                 <Outlet/>
             </div>
             </main>
