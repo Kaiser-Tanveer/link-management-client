@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaLink, FaUserAlt } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { HiUserCircle } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,10 @@ const Header = () => {
     return (
         <>
         <div onClick={() => profile && setProfile(false)} className='bg-orange-500 py-1 text-white px-2'>
+            <Link className='text-left flex items-center h-10 hover:bg-orange-100 px-4 rounded-[7px] duration-500 text-orange-500'>
+                <FaLink className='mr-2 text-md'/>
+                <span>My Links</span>
+            </Link>
             <Link className='flex items-center justify-end'><HiUserCircle onClick={() => setProfile(!profile)} className='text-4xl mr-2'/></Link>
         </div>
         {
