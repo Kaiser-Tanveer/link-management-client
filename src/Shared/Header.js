@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className='bg-orange-500 py-1 text-white'>
             <div className='flex md:items-center justify-between md:justify-end'>
-                <Link className='flex items-center pl-8 md:hidden'>
+                <Link className='flex items-center pl-4 md:hidden'>
                     <FaLink className='mr-2 text-md'/>
                     <span>My Links</span>
                 </Link>
